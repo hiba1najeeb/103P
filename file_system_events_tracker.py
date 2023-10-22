@@ -16,7 +16,13 @@ class FileMovementHandler(FileSystemEventHandler):
         print(f"Hey,{event.src_path}has been created!")
 
     def on_deleted(self,event):
-        print(f"Oops! Someone deleted the file{event.src_path}")    
+        print(f"Oops! Someone deleted the file{event.src_path}")  
+    def on_modified(self,event):
+        print(f"Someone modified the file{event.src_path}") 
+    def on_moved(self,event):
+        print(f" Someone moved the file{event.src_path}")  
+
+
 event_handler = FileMovementHandler()
 
 
